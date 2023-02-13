@@ -1,21 +1,21 @@
 import { Injector } from '@angular/core';
-import { PropsWithChildren, createContext, useContext, createElement } from 'react';
+import { createContext, createElement, PropsWithChildren, useContext } from 'react';
 
 const InjectorCtx = createContext<Injector | null>(null);
 
 export function NgContext(props: PropsWithChildren<{ injector: Injector }>) {
-  return createElement(InjectorCtx.Provider, {
-    children: props.children,
-    value: props.injector,
-  });
+    return createElement(InjectorCtx.Provider, {
+        children: props.children,
+        value: props.injector,
+    });
 }
 
 export function useInjector(): Injector {
-  const injector = useContext(InjectorCtx);
+    const injector = useContext(InjectorCtx);
 
-  if (!injector) {
-    throw new Error('Missing NgContext');
-  }
+    if (!injector) {
+        throw new Error('Missing NgContext');
+    }
 
-  return injector;
+    return injector;
 }
