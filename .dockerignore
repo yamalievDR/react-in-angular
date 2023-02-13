@@ -3,6 +3,7 @@
 .vscode
 coverage
 
+# OS generated files #
 .DS_Store
 ehthumbs.db
 Icon?
@@ -21,7 +22,6 @@ tsd_typings
 # Dist #
 .awcache
 .angular
-dist
 .webpack.json
 compiled
 dll

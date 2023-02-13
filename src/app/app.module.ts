@@ -7,8 +7,9 @@ import { RouterModule } from '@angular/router';
 import { routes } from './routes';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, RouterModule.forRoot(routes)],
-  declarations: [AppComponent],
-  bootstrap: [AppComponent],
+    imports: [BrowserModule, FormsModule, RouterModule.forRoot(routes)],
+    declarations: [AppComponent],
+    bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+}

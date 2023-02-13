@@ -1,0 +1,9 @@
+version: '3'
+services:
+  node_app_1:
+    container_name: react_in_angular
+    build:
+      context: .
+      dockerfile: ./deploy/Dockerfile
+    ports:
+      - "4201:4201"

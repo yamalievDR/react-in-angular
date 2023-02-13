@@ -1,15 +1,17 @@
 <h1>Using React in Angular Applications</h1>
 
 <a
-  target="_blank"
-  href="https://netbasal.com/using-react-in-angular-applications-1bb907ecac91"
-  >Original aricle ↗️</a
+        target="_blank"
+        href="https://netbasal.com/using-react-in-angular-applications-1bb907ecac91"
+>Original article ↗️</a
 >
 
+<pre> {{ {count: count$ | async} | json }}</pre>
 <ul>
-  <li><a routerLink="react-component">reactComponent directive</a></li>
-  <li><a routerLink="react-component-lazy">lazyReactComponent directive</a></li>
-  <li><a routerLink="react-app">load react-app</a></li>
+    <li><a routerLink="react-component" routerLinkActive="active">reactComponent directive</a></li>
+    <li><a routerLink="react-component-lazy" routerLinkActive="active">lazyReactComponent directive</a></li>
+    <li><a routerLink="child" routerLinkActive="active">NG child</a></li>
+    <li><a routerLink="react-app" routerLinkActive="active">load react-app</a></li>
 </ul>
 
 <router-outlet></router-outlet>

@@ -3,20 +3,20 @@ import { ComponentProps, createElement, ElementType } from 'react';
 import { createRoot } from 'react-dom/client';
 
 @Directive({
-  selector: '[reactComponent]',
-  standalone: true,
+    selector: '[reactComponent]',
+    standalone: true,
 })
 export class ReactComponentDirective<Comp extends ElementType> {
-  @Input() reactComponent: Comp;
-  @Input() props: ComponentProps<Comp>;
+    @Input() reactComponent: Comp;
+    @Input() props: ComponentProps<Comp>;
 
-  private root = createRoot(inject(ElementRef).nativeElement);
+    private root = createRoot(inject(ElementRef).nativeElement);
 
-  ngOnChanges() {
-    this.root.render(createElement(this.reactComponent, this.props));
-  }
+    ngOnChanges() {
+        this.root.render(createElement(this.reactComponent, this.props));
+    }
 
-  ngOnDestroy() {
-    this.root.unmount();
-  }
+    ngOnDestroy() {
+        this.root.unmount();
+    }
 }
