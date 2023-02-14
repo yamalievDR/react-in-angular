@@ -1,7 +1,7 @@
 import { inject, Injectable, Injector } from '@angular/core';
 import { ComponentProps, createElement, ElementType } from 'react';
 import { createRoot, Root } from 'react-dom/client';
-import { NgContext } from './useInjector';
+import { NgContext } from '../react-app/useInjector';
 
 @Injectable({providedIn: 'root'})
 export class NgReact {

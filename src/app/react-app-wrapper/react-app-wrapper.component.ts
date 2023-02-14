@@ -1,6 +1,6 @@
 import { Component, ElementRef, inject, OnDestroy, OnInit } from '@angular/core';
-import { NgReact } from './ng-react.service';
-import RouterWrapper from './RouterWrapper';
+import { NgReact } from '../services/ng-react.service';
+import RouterWrapper from '../react-app/RouterWrapper';
 
 @Component({
     standalone: true,

@@ -16,7 +16,7 @@ export const routes: Route[] = [
     {
         path: 'react-app',
         loadComponent: () =>
-            import('./react-app/react-app-wrapper.component').then((m) => m.ReactAppWrapperComponent),
+            import('./react-app-wrapper/react-app-wrapper.component').then((m) => m.ReactAppWrapperComponent),
     },
     {
         path: 'child',
