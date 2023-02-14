@@ -1,4 +1,4 @@
-import React, { CSSProperties, useState } from 'react';
+import React, { CSSProperties, useEffect, useState } from 'react';
 import { Link, Route, Routes } from 'react-router-dom';
 
 import NxWelcome from './nx-welcome';
@@ -8,6 +8,7 @@ import { AuthContext } from './auth-context';
 import { useInjector } from './useInjector';
 import { AuthService } from '../services/auth.service';
 import { Async } from './Async';
+import { HTTP_CLIENT, NgHttpClient } from '../shared/http-client.provider';
 
 const ReactAppStyles: CSSProperties = {
     backgroundColor: 'rgba(200, 50, 50, 0.5)',
@@ -17,6 +18,13 @@ export const App = () => {
     const injector = useInjector();
 
     const authService = injector.get(AuthService);
+    const httpClient = injector.get<NgHttpClient>(HTTP_CLIENT);
+
+    useEffect(() => {
+        httpClient.get('https://run.mocky.io/v3/a906ab92-b981-4b6d-a12e-1e3d627a105f').then(res => {
+            console.log('[LOG] res', res);
+        })
+    });
 
     const token$ = authService.token$;
     const [token, setValue] = useState<string>('');
@@ -27,7 +35,7 @@ export const App = () => {
                 <div style={ReactAppStyles}>
                     <NxWelcome title="react-platform"/>
                     <br/>
-                    <Link to="/child">Дочерний роут реакт</Link>
+                    <Link to="/child">Дочерний роут реакта</Link>
                     <br/>
                     <Routes>
                         <Route path="child" element={<ReactChildRouteComponent/>}>

@@ -3,6 +3,7 @@ import { Link, Outlet } from 'react-router-dom';
 import { useInjector } from '../useInjector';
 import { SomeService } from '../../services/some.service';
 import { AuthContext } from '../auth-context';
+import { HttpClient } from '@angular/common/http';
 
 
 const childStyles: CSSProperties = {
@@ -14,6 +15,7 @@ export const ReactChildRouteComponent = () => {
     const injector = useInjector();
 
     const someService = injector.get(SomeService);
+    const httpClient = injector.get(HttpClient);
 
     return (
         <div style={childStyles} className="react-class-name">

@@ -14,7 +14,7 @@ export interface Type<T> extends Function {
 }
 
 export interface NgInjector extends Object {
-    get<T>(token: Type<T>): T
+    get<T>(token: Type<T> | string): T
 }
 
 export function useInjector(): NgInjector {
